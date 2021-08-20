@@ -1,0 +1,182 @@
+<!--exercicio: fazer uma réplica com somente HTML e CSS do feed do instagram, considenrando apenas 3 imagens e os
+    comentários dessas imagens-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Fakegram</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f3f3f3;
+            font-family: sans-serif;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 50px;
+        }
+
+        .post {
+            width: 800px;
+            background-color: white;
+            border-radius: 7px;
+            margin-bottom: 50px;
+        }
+
+        .user {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+            padding: 5px;
+        }
+
+        .user img {
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            border: 2px solid grey;
+            margin-right: 5px;
+        }
+
+        .post>img {
+            width: 100%;
+        }
+
+        .icons {
+            display: flex;
+            justify-content: space-between;
+            padding: 4px;
+        }
+
+        .comments p {
+            margin-top: 10px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="post">
+            <div class="user">
+                <img src="https://bit.ly/3gjou5w" />
+                <span>
+                    Kiko
+                </span>
+
+            </div>
+            <img src="https://bit.ly/3j5JGOc" />
+            <div class="icons">
+                <div>
+                    <img src="assets/heart.svg" />
+                    <img src="assets/message-circle.svg" />
+                    <img src="assets/send.svg" />
+                </div>
+                <img src="assets/bookmark.svg" />
+            </div>
+            <div class="description">
+                <p>
+                    <strong>Kiko</strong>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In congue lacus quis elit faucibus
+                    ultrices.
+                    Sed quis ligula leo. Duis velit ex, tincidunt ut dui quis, viverra efficitur nunc.
+                </p>
+            </div>
+            <div class="comments">
+                <p>
+                    <strong>Chaves </strong>
+                    Isso isso isso
+                </p>
+                <p>
+                    <strong>Florinda </strong>
+                    Venha tesouro, vou lhe dar um cachorrinho
+                </p>
+            </div>
+        </div>
+
+
+
+        <div class="post">
+            <div class="user">
+                <img src="https://bit.ly/3ggq3AY" />
+                <span>
+                    Chaves
+                </span>
+
+            </div>
+            <img src="https://bit.ly/3mgOT7L" />
+            <div class="icons">
+                <div>
+                    <img src="assets/heart.svg" />
+                    <img src="assets/message-circle.svg" />
+                    <img src="assets/send.svg" />
+                </div>
+                <img src="assets/bookmark.svg" />
+            </div>
+            <div class="description">
+                <p>
+                    <strong>Chaves</strong>
+                    Donec ac placerat ipsum. Aenean maximus sagittis nulla, sed accumsan diam faucibus vitae. Vivamus
+                    mattis semper elementum. Phasellus pulvinar posuere nisi nec sollicitudin.
+                </p>
+            </div>
+            <div class="comments">
+                <p>
+                    <strong>Madruga </strong>
+                    Tinha que ser...
+                </p>
+                <p>
+                    <strong>Poppy </strong>
+                    Ai chavinho
+                </p>
+            </div>
+        </div>
+
+
+        <div class="post">
+            <div class="user">
+                <img src="https://bit.ly/3gmktgB" />
+                <span>
+                    Clotilde
+                </span>
+
+            </div>
+            <img src="https://bit.ly/3AYRes1" />
+            <div class="icons">
+                <div>
+                    <img src="assets/heart.svg" />
+                    <img src="assets/message-circle.svg" />
+                    <img src="assets/send.svg" />
+                </div>
+                <img src="assets/bookmark.svg" />
+            </div>
+            <div class="description">
+                <p>
+                    <strong>Clotilde</strong>
+                    Proin gravida fermentum urna ac pretium. Praesent commodo finibus vulputate. Ut tempus facilisis
+                    elit, vel feugiat nunc lacinia id.
+                </p>
+            </div>
+            <div class="comments">
+                <p>
+                    <strong>Chaves </strong>
+                    Tinha que ser bruxa do 71
+                </p>
+                <p>
+                    <strong>Chiquinha </strong>
+                    UEEEEEEEEEEEEEEEEEEEEEEEEEEUEEEEEEEEEEEEEEEEEEEEEEEEEN
+                </p>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
