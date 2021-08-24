@@ -1,0 +1,53 @@
+<!--Exercício: Faça um formulário que contenha dois campos, cor e margem, além de um botão. 
+    Quando o usuário clicar no botão, sua página deve aplicar a cor e a margem para todos os elementos 'div' de sua página. 
+    Para que o usuário perceba as alterações na tela, crie ainda duas ou mais divs com algum conteúdo.-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Meu Site</title>
+    <style>
+        div#form1 {
+            background-color: orange;
+        }
+    </style>
+    <script>
+        function clicouBotao() {
+            const divs = document.getElementsByTagName("div")
+            const margem = document.getElementById("margem")
+            const cor = document.getElementById("cor")
+
+            console.log(margem)
+            for (const div of divs) {
+                div.style = `background-color :  ${cor.value}; margin: ${margem.value}; `
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <div id=form1 class="formulario">
+        <form>
+            <label>Cor</label>
+            <input id="cor" type="color">
+            <br />
+            <label>Margem</label>
+            <input id="margem" type="text">
+            <button onclick=clicouBotao() type="button">Clique aqui</button>
+            <br />
+        </form>
+    </div>
+    <div>
+        <p>
+            Teste
+        </p>
+    </div>
+    <div>
+        Teste
+    </div>
+</body>
+
+</html>
