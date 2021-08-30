@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script>
+        function clicouBotao() {
+            const div = document.getElementsByTagName("div")
+            const nome = document.getElementById("nome")
+            const tipo = document.getElementById("tipo")
+            const botao = document.getElementById("inputBotao")
+            //console.log(`${nome.value}\n${tipo.value}`)
+
+            valores = {
+            }
+            valores['novoNome'] = nome.value;
+            valores['novoTipo'] = tipo.value;
+            valores['valorBotao'] = botao.value;
+            console.log(valores)
+        }
+    </script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id=form1 class="formulario">
+        <form>
+            <label>Nome</label>
+            <input id="nome" type="text">
+            <br />
+            <label>Tipo</label>
+            <input id="tipo" type="text">
+            <button type="button">
+                <form id=form2>
+                    <input id=inputBotao type="text">
+                    <button id = "onclick=clicouBotao() type="button">Clique Aqui</button>
+                </form>
+            </button>
+            <br />
+        </form>
+</body>
+
+</html>
