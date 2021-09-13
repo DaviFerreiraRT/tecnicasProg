@@ -30,7 +30,7 @@ function adicionarComentario() {
     const divComentario = document.getElementById("comments")
 
     const p = document.createElement("p")
-    p.appendChild(document.createTextNode(`${comentario}`))
+    p.appendChild(document.createTextNode(`- ${comentario}`))
     divComentario.appendChild(p)
     
     contadorComentario++;
