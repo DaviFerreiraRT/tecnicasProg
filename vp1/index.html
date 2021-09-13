@@ -1,0 +1,131 @@
+<!--exercicio: fazer uma réplica com somente HTML e CSS do feed do instagram, considenrando apenas 3 imagens e os
+    comentários dessas imagens-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Fakegram</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f3f3f3;
+            font-family: sans-serif;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 50px;
+        }
+
+        .post {
+            width: 800px;
+            background-color: white;
+            border-radius: 7px;
+            margin-bottom: 50px;
+        }
+
+        .user {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+            padding: 5px;
+        }
+
+        .user img {
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            border: 2px solid grey;
+            margin-right: 5px;
+        }
+
+        .post>img {
+            width: 100%;
+        }
+
+        .icons {
+            display: flex;
+            justify-content: space-between;
+            padding: 4px;
+        }
+
+        .comments p {
+            margin-top: 10px;
+
+        }
+    </style>
+    <script src="src/codigo.js"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+</head>
+
+<body>
+    <main>
+        <div class="post">
+            <div class="user">
+                <img src="https://bit.ly/3gjou5w" />
+                <span>
+                    Kiko
+                </span>
+
+            </div>
+            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://bit.ly/3j5JGOc" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://bit.ly/3gjou5w" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="..." class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+
+            <div class="icons">
+                <div>
+                    <span id="likes">0 curtidas</span>
+                    <button type="button" id="botaoCurtir" class="btn btn-primary" onclick="deuLike()"
+                        type="button">Curtir</button>
+                </div>
+            </div>
+            <div class="description">
+                <p>
+                    <strong>Kiko</strong>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In congue lacus quis elit faucibus
+                    ultrices.
+                    Sed quis ligula leo. Duis velit ex, tincidunt ut dui quis, viverra efficitur nunc.
+                </p>
+            </div>
+            <strong id = "qntComentarios">0 comentarios</strong>
+            <div class="comments" id="comments">
+            </div>
+            <input type="text" class="form-control" id="comentario" />
+            <button type="button" class="btn btn-primary" onclick="adicionarComentario()">Comentar</button>
+        </div>
+
+
+
+    </main>
+</body>
+
+</html>
