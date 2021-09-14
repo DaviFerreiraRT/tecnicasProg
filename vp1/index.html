@@ -1,6 +1,3 @@
-<!--exercicio: fazer uma réplica com somente HTML e CSS do feed do instagram, considenrando apenas 3 imagens e os
-    comentários dessas imagens-->
-
 <!DOCTYPE html>
 <html>
 
@@ -26,7 +23,7 @@
             <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="https://bit.ly/3j5JGOc" class="d-block w-100">
+                        <img src="https://bit.ly/3kas44c" class="d-block w-100">
                     </div>
                     <div class="carousel-item">
                         <img src="https://bit.ly/3gjou5w" class="d-block w-100">
@@ -46,8 +43,8 @@
             </div>
             <div class="icons">
                 <div>
-                    <span id="likes">0 curtidas</span>
-                    <button type="button" id="botaoCurtir" class="btn btn-primary" onclick="deuLike()"
+                    <span id="likes-0">0 curtidas</span>
+                    <button type="button" id="botaoCurtir-0" class="btn btn-primary" onclick="deuLike(0)"
                         type="button">Curtir</button>
                 </div>
             </div>
@@ -59,11 +56,119 @@
                     Sed quis ligula leo. Duis velit ex, tincidunt ut dui quis, viverra efficitur nunc.
                 </p>
             </div>
-            <strong id="qntComentarios">0 comentarios</strong>
-            <div class="comments" id="comments">
+            <strong id="qntComentarios-0">0 comentarios</strong>
+            <div class="comments" id="comments-0">
             </div>
-            <input type="text" class="form-control" id="comentario" />
-            <button type="button" class="btn btn-primary" onclick="adicionarComentario()">Comentar</button>
+            <input type="text" class="form-control" id="comentario-0" />
+            <button type="button" class="btn btn-primary" onclick="adicionarComentario(0)">Comentar</button>
+        </div>
+
+
+
+
+
+
+
+        <div class="post">
+            <div class="user">
+                <img src="https://bit.ly/3k9NrlZ" />
+                <span>
+                    Florinda
+                </span>
+            </div>
+            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://bit.ly/3hzHehx" class="d-block w-100">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://bit.ly/3hzA0Km" class="d-block w-100">
+                    </div>
+                </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Proxima</span>
+                </button>
+            </div>
+            <div class="icons">
+                <div>
+                    <span id="likes-1">0 curtidas</span>
+                    <button type="button" id="botaoCurtir-1" class="btn btn-primary" onclick="deuLike(1)"
+                        type="button">Curtir</button>
+                </div>
+            </div>
+            <div class="description">
+                <p>
+                    <strong>Kiko</strong>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In congue lacus quis elit faucibus
+                    ultrices.
+                    Sed quis ligula leo. Duis velit ex, tincidunt ut dui quis, viverra efficitur nunc.
+                </p>
+            </div>
+            <strong id="qntComentarios-1">0 comentarios</strong>
+            <div class="comments" id="comments-1">
+            </div>
+            <input type="text" class="form-control" id="comentario-1" />
+            <button type="button" class="btn btn-primary" onclick="adicionarComentario(1)">Comentar</button>
+        </div>
+
+        
+
+        <div class="post">
+            <div class="user">
+                <img src="https://bit.ly/3Ejrqcs" />
+                <span>
+                    Madruga
+                </span>
+            </div>
+            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://bit.ly/3nx79dJ" class="d-block w-100">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://bit.ly/398MZhu" class="d-block w-100">
+                    </div>
+                </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Proxima</span>
+                </button>
+            </div>
+            <div class="icons">
+                <div>
+                    <span id="likes-2">0 curtidas</span>
+                    <button type="button" id="botaoCurtir-2" class="btn btn-primary" onclick="deuLike(2)"
+                        type="button">Curtir</button>
+                </div>
+            </div>
+            <div class="description">
+                <p>
+                    <strong>Kiko</strong>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In congue lacus quis elit faucibus
+                    ultrices.
+                    Sed quis ligula leo. Duis velit ex, tincidunt ut dui quis, viverra efficitur nunc.
+                </p>
+            </div>
+            <strong id="qntComentarios-2">0 comentarios</strong>
+            <div class="comments" id="comments-2">
+            </div>
+            <input type="text" class="form-control" id="comentario-2" />
+            <button type="button" class="btn btn-primary" onclick="adicionarComentario(2)">Comentar</button>
         </div>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
