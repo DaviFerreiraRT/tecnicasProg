@@ -1,0 +1,12 @@
+<html>
+
+    <body>
+        <h1>Matéria do Dia</h1>
+        <div th:each="materia: ${materias}">
+            <h2 th:text="${materia.titulo}"></h2>
+            <p th:text="${materia.texto}"></p>
+            <span th:text="${materia.comentarios}"></span>
+        </div>
+    </body>
+
+</html>
