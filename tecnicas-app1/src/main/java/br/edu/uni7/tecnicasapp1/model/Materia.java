@@ -1,21 +1,23 @@
 package br.edu.uni7.tecnicasapp1.model;
 
-import java.util.ArrayList;
+import java.util.Date;
 
 public class Materia {
 
     private String titulo;
-    private String texto;
-    private String comentarios ;
+    private String autor;
+    private String conteudo;
+    private Date data;
 
     public Materia() {
 
     }
 
-    public Materia(String titulo, String texto,String comentario1) {
+    public Materia(String titulo, String autor, String conteudo, Date data) {
         this.titulo = titulo;
-        this.texto = texto;
-        this.comentarios=comentario1;
+        this.autor = autor;
+        this.conteudo = conteudo;
+        this.data = data;
     }
 
     public String getTitulo() {
@@ -26,18 +28,27 @@ public class Materia {
         this.titulo = titulo;
     }
 
-    public String getTexto() {
-        return texto;
+    public String getAutor() {
+        return autor;
     }
 
-    public void setTexto(String texto) {
-        this.texto = texto;
+    public void setAutor(String autor) {
+        this.autor = autor;
     }
 
-    public String getComentarios() {
-        return comentarios;
+    public String getConteudo() {
+        return conteudo;
     }
-    public void setComentarios(String comentarios) {
-        this.comentarios = comentarios;
+
+    public void setConteudo(String conteudo) {
+        this.conteudo = conteudo;
+    }
+
+    public Date getData() {
+        return data;
+    }
+
+    public void setData(Date data) {
+        this.data = data;
     }
 }
