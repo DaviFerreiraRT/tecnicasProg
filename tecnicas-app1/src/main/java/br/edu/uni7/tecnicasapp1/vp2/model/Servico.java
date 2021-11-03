@@ -6,17 +6,23 @@ import java.util.List;
 public class Servico {
     private Integer id;
     private double maoDeObra;
-    private List pecasVendidas;
+    private Estoque estoque;
     private double precoTotal;
 
-
-    public Servico(Integer id, double maoDeObra, String pecasVendidas, double precoTotal) {
+    public Servico(Integer id, double maoDeObra, Estoque estoque, double precoTotal) {
         this.id = id;
         this.maoDeObra = maoDeObra;
-        this.pecasVendidas = new ArrayList<String>();
-        this.precoTotal = precoTotal;
+        this.estoque = estoque;
+        this.precoTotal = maoDeObra + estoque.getPreco();
     }
 
+    public Estoque getEstoque() {
+        return estoque;
+    }
+
+    public void setEstoque(Estoque estoque) {
+        this.estoque = estoque;
+    }
 
     public Integer getId() {
         return id;
@@ -34,13 +40,6 @@ public class Servico {
         this.maoDeObra = maoDeObra;
     }
 
-    public List getPecasVendidas() {
-        return pecasVendidas;
-    }
-
-    public void setPecasVendidas(List pecasVendidas) {
-        this.pecasVendidas = pecasVendidas;
-    }
 
     public double getPrecoTotal() {
         return precoTotal;

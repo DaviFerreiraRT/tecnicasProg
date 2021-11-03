@@ -4,11 +4,11 @@ public class Estoque {
     private Integer id;
     private String nome;
     private String fabricante;
-    private String qntEstoque;
-    private String preco;
+    private int qntEstoque;
+    private double preco;
 
 
-    public Estoque(Integer id, String nome, String fabricante, String qntEstoque, String preço) {
+    public Estoque(Integer id, String nome, String fabricante, int qntEstoque, double preço) {
         this.id = id;
         this.nome = nome;
         this.fabricante = fabricante;
@@ -41,19 +41,19 @@ public class Estoque {
         this.fabricante = fabricante;
     }
 
-    public String getQntEstoque() {
+    public int getQntEstoque() {
         return qntEstoque;
     }
 
-    public void setQntEstoque(String qntEstoque) {
+    public void setQntEstoque(int qntEstoque) {
         this.qntEstoque = qntEstoque;
     }
 
-    public String getPreco() {
+    public double getPreco() {
         return preco;
     }
 
-    public void setPreco(String preço) {
+    public void setPreco(double preço) {
         this.preco = preço;
     }
 }

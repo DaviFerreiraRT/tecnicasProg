@@ -19,13 +19,7 @@ public class EstoqueController {
     }
 
     @ResponseBody
-    @RequestMapping(value = "estoque", method = RequestMethod.GET)
-    public List<Estoque> list() {
-        return repository.list();
-    }
-
-    @ResponseBody
-    @RequestMapping(value = "estoque/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "estoque/{id}",method = RequestMethod.GET)
     public Estoque findById(@PathVariable Integer id) {
         return repository.findById(id);
     }
@@ -38,8 +32,9 @@ public class EstoqueController {
 
     @ResponseBody
     @RequestMapping(value = "estoque", method = RequestMethod.POST)
-    public Estoque create(Estoque estoque, @RequestBody String nomeProduto, @RequestBody String precoProduto) {
-        return repository.create(estoque,nomeProduto,precoProduto);
+    public Estoque create(@RequestBody Estoque estoque) {
+
+        return repository.create(estoque, estoque.getNome(), estoque.getPreco(),estoque.getFabricante(),estoque.getQntEstoque());
     }
 
     @ResponseBody

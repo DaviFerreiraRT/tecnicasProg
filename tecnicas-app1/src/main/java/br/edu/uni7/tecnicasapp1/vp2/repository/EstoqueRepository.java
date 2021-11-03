@@ -22,9 +22,12 @@ public class EstoqueRepository {
     }
 
     public Estoque findById(Integer id) {
-        return EstoqueMap.get(id);
-    }
+        if(EstoqueMap.containsKey(id)){
+            return EstoqueMap.get(id);
+        }
+        return null;
 
+    }
     public Estoque update(Integer id, Estoque estoque) {
         if (!EstoqueMap.containsKey(id)) {
             throw new IllegalArgumentException("estoque inexistente");
@@ -34,11 +37,9 @@ public class EstoqueRepository {
         return estoque;
     }
 
-    public Estoque create(Estoque estoque,String nome, String preco) {
+    public Estoque create(Estoque estoque,String nome, double preco,String fabricante,int qntEstoque) {
         int id = contador;
         contador++;
-        estoque.setNome(nome);
-        estoque.setPreco(preco);
         EstoqueMap.put(id, estoque);
         estoque.setId(id);
 
