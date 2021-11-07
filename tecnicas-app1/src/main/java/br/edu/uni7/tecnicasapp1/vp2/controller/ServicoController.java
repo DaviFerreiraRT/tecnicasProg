@@ -1,6 +1,5 @@
 package br.edu.uni7.tecnicasapp1.vp2.controller;
 
-import br.edu.uni7.tecnicasapp1.vp2.model.Estoque;
 import br.edu.uni7.tecnicasapp1.vp2.model.Servico;
 import br.edu.uni7.tecnicasapp1.vp2.repository.EstoqueRepository;
 import br.edu.uni7.tecnicasapp1.vp2.repository.ServicoRepository;
@@ -11,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 public class ServicoController {
     private final ServicoRepository repository;
-
+    private EstoqueRepository estoqueRepo;
     @Autowired
     public ServicoController(ServicoRepository repository) {
         this.repository = repository;
@@ -32,8 +31,7 @@ public class ServicoController {
     @ResponseBody
     @RequestMapping(value = "servico", method = RequestMethod.POST)
     public Servico create(@RequestBody Servico servico) {
-
-        return repository.create(servico, servico.getMaoDeObra(),servico.getPrecoTotal());
+        return repository.create(servico, servico.getMaoDeObra());
     }
 
     @ResponseBody

@@ -6,22 +6,12 @@ import java.util.List;
 public class Servico {
     private Integer id;
     private double maoDeObra;
-    private Estoque estoque;
     private double precoTotal;
 
-    public Servico(Integer id, double maoDeObra, Estoque estoque, double precoTotal) {
+    public Servico(Integer id, double maoDeObra) {
         this.id = id;
         this.maoDeObra = maoDeObra;
-        this.estoque = estoque;
-        this.precoTotal = maoDeObra + estoque.getPreco();
-    }
-
-    public Estoque getEstoque() {
-        return estoque;
-    }
-
-    public void setEstoque(Estoque estoque) {
-        this.estoque = estoque;
+        this.precoTotal += maoDeObra;
     }
 
     public Integer getId() {

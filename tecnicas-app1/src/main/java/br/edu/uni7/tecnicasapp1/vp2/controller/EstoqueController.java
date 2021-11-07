@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+import java.util.Optional;
 
 @Controller
 public class EstoqueController {
@@ -20,21 +20,28 @@ public class EstoqueController {
 
     @ResponseBody
     @RequestMapping(value = "estoque/{id}",method = RequestMethod.GET)
-    public Estoque findById(@PathVariable Integer id) {
+    public Optional<Estoque> findById(@PathVariable Integer id) {
         return repository.findById(id);
     }
 
     @ResponseBody
-    @RequestMapping(value = "estoque/{id}", method = RequestMethod.PUT)
-    public Estoque update(Integer id, Estoque estoque) {
-        return repository.update(id, estoque);
+    @GetMapping(value = "estoque")
+    public Estoque [] getAll(){
+        return repository.getAll();
+    }
+
+
+    @ResponseBody
+    @RequestMapping(value = "estoque", method = RequestMethod.PUT)
+    public Optional<Estoque> update(@RequestBody Estoque estoque) {
+        return repository.update(estoque.getId(), estoque.getNome(),estoque.getFabricante(), estoque.getQntEstoque(),estoque.getPreco());
     }
 
     @ResponseBody
     @RequestMapping(value = "estoque", method = RequestMethod.POST)
     public Estoque create(@RequestBody Estoque estoque) {
 
-        return repository.create(estoque, estoque.getNome(), estoque.getPreco(),estoque.getFabricante(),estoque.getQntEstoque());
+        return repository.create(estoque, estoque.getNome(), estoque.getPreco(), estoque.getFabricante(), estoque.getQntEstoque());
     }
 
     @ResponseBody
