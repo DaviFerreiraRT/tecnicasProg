@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Controller
 public class ServicoController {
     private final ServicoRepository repository;
@@ -23,6 +25,12 @@ public class ServicoController {
     }
 
     @ResponseBody
+    @RequestMapping(value = "servico",method = RequestMethod.GET)
+    public List<Servico> findAll() {
+        return repository.list();
+    }
+
+    @ResponseBody
     @RequestMapping(value = "servico/{id}", method = RequestMethod.PUT)
     public Servico update(Integer id, Servico servico) {
         return repository.update(id, servico);
@@ -31,7 +39,7 @@ public class ServicoController {
     @ResponseBody
     @RequestMapping(value = "servico", method = RequestMethod.POST)
     public Servico create(@RequestBody Servico servico) {
-        return repository.create(servico, servico.getMaoDeObra());
+        return repository.create(servico);
     }
 
     @ResponseBody

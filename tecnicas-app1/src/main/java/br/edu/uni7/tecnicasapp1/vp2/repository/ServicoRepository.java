@@ -10,12 +10,13 @@ import java.util.*;
 public class ServicoRepository {
     private static Integer contador = 1;
     private final Map<Integer, Servico> ServicoMap;
-
+    private EstoqueRepository estoque;
     public ServicoRepository() {
         ServicoMap = new HashMap<>();
+        estoque = new EstoqueRepository();
     }
 
-    public List<Estoque> list() {
+    public List<Servico> list() {
         return new ArrayList(ServicoMap.values());
     }
 
@@ -28,17 +29,18 @@ public class ServicoRepository {
     }
     public Servico update(Integer id, Servico servico) {
         if (!ServicoMap.containsKey(id)) {
-            throw new IllegalArgumentException("estoque inexistente");
+            throw new IllegalArgumentException("serviço inexistente");
         }
 
         ServicoMap.put(id, servico);
         return servico;
     }
 
-    public Servico create(Servico servico,double maoDeObra){
+    public Servico create(Servico servico){
         int id = contador;
         contador++;
-        servico.setPrecoTotal(maoDeObra);
+        Optional<Estoque> total =  estoque.findById(id);
+        servico.setPrecoTotal(total.get().getPreco()+ servico.getMaoDeObra());
         ServicoMap.put(id, servico);
         servico.setId(id);
 
