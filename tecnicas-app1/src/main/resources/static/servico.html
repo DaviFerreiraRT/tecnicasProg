@@ -15,37 +15,25 @@
     <div class="container-fluid">
         <a class="navbar-brand" href="#">
             <img src="img/logo.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
-            Estoque
+            Servico
         </a>
     </div>
 </nav>
 
-<div class="container" id="estoque">
+<div class="container" id="servico">
 </div>
 
-<div class="container">
+<div class="container" id ="containerServico">
     <form>
         <div class="mb-3">
-            <label for="nome" class="form-label">Nome</label>
-            <input type="text" class="form-control" id="nome" name="nome"/>
+            <label for="maoDeObra" class="form-label">Mao De Obra</label>
+            <input type="text" class="form-control" id="maoDeObra" name="maoDeObra"/>
         </div>
-        <div class="mb-3">
-            <label for="fabricante" class="form-label">Fabricante</label>
-            <input type="text" class="form-control" id="fabricante" name="fabricante"/>
-        </div>
-        <div class="mb-3">
-            <label for="qntEstoque" class="form-label">Quantidade do Estoque</label>
-            <input type="text" class="form-control" id="qntEstoque" name="qntEstoque"/>
-        </div>
-        <div class="mb-3">
-            <label class="form-label" for="preco">Preco</label>
-            <input type="text" class="form-control" id="preco" name="preco"/>
-        </div>
-        <button type="button" class="btn btn-primary" onclick="submeterFormulario()">Cadastrar</button>
+        <button type="button" class="btn btn-primary" onclick="submeterServico()">Cadastrar servico</button>
     </form>
 </div>
 
-<script src="js/script.js"></script>
+<script src="js/servico.js"></script>
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
