@@ -33,14 +33,14 @@ public class ServicoController {
     @ResponseBody
     @RequestMapping(value = "servico", method = RequestMethod.POST)
     public Servico create(@RequestBody Servico servico) {
-        return repository.save(servico);
+        repository.save(servico);
+        return servico;
     }
 
     @ResponseBody
     @RequestMapping(value = "servico/{id}", method = RequestMethod.PUT)
     public void update(@PathVariable Integer id, @RequestBody Servico servico) {
         repository.save(servico);
-
     }
 
     @ResponseBody
@@ -48,6 +48,5 @@ public class ServicoController {
     public void remove(@PathVariable Integer id) {
         repository.deleteById(id);
     }
-
 
 }

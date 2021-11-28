@@ -35,7 +35,7 @@ function adicionarPeca(peca) {
     btnAtualizar.innerHTML = "Atualizar";
     btnAtualizar.type = "button";
     btnAtualizar.onclick = function () {
-        atualizarPeca(peca);
+        incluirPecaNoFormulario(peca);
     };
     opcoes.appendChild(btnAtualizar);
 
@@ -82,7 +82,7 @@ function cadastarPeca() {
     } else {
         let oReq = new XMLHttpRequest();
         oReq.onload = function () {
-            removerPeca(peca.id);
+            apagarLinhaDaTabela(peca.id);
             adicionarPeca(peca);
         };
         oReq.open("PUT", "peca/" + peca.id, true);
@@ -104,15 +104,19 @@ function limparFormulario() {
 function removerPeca(id) {
     let oReq = new XMLHttpRequest();
     oReq.onload = function () {
-        let pecaNaTabela = document.getElementById("peca-" + id);
-        document.getElementById("corpoTabela").removeChild(pecaNaTabela);
+        apagarLinhaDaTabela(id);
     };
     oReq.open("DELETE", "peca/" + id, true);
     oReq.setRequestHeader("Content-Type", "application/json");
     oReq.send();
 }
 
-function atualizarPeca(peca) {
+function apagarLinhaDaTabela(pecaId) {
+    let pecaNaTabela = document.getElementById("peca-" + pecaId);
+    document.getElementById("corpoTabela").removeChild(pecaNaTabela);
+}
+
+function incluirPecaNoFormulario(peca) {
     document.getElementById("id-entidade").value = peca.id;
     document.getElementById("nome").value = peca.nome;
     document.getElementById("fabricante").value = peca.fabricante;

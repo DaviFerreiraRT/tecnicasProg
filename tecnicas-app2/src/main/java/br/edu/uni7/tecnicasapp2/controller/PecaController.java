@@ -1,6 +1,8 @@
 package br.edu.uni7.tecnicasapp2.controller;
 
+import br.edu.uni7.tecnicasapp2.model.NotaFiscal;
 import br.edu.uni7.tecnicasapp2.model.Peca;
+import br.edu.uni7.tecnicasapp2.repository.NotaFiscalRepository;
 import br.edu.uni7.tecnicasapp2.repository.PecaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,10 +14,12 @@ import java.util.List;
 public class PecaController {
 
     private final PecaRepository repository;
+    private final NotaFiscalRepository notaFiscalRepository;
 
     @Autowired
-    public PecaController(PecaRepository repository) {
+    public PecaController(PecaRepository repository, NotaFiscalRepository notaFiscalRepository) {
         this.repository = repository;
+        this.notaFiscalRepository = notaFiscalRepository;
     }
 
     @ResponseBody
@@ -34,6 +38,12 @@ public class PecaController {
     @RequestMapping(value = "peca", method = RequestMethod.POST)
     public Peca create(@RequestBody Peca peca) {
         repository.save(peca);
+
+        NotaFiscal notaFiscal = new NotaFiscal();
+        notaFiscal.setCnpjEmitente("cnpj 918273921/00");
+        notaFiscal.setCpfDoCliente("2938.321.312-12");
+        notaFiscalRepository.save(notaFiscal);
+
         return peca;
     }
 
